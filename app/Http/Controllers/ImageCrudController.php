@@ -44,6 +44,7 @@ class ImageCrudController extends Controller
         ]);
 
         $imageName = '';
+        
         if($image = $request->file('image')){
             $imageName = time().'-'.uniqid().'.'.$image->getClientOriginalExtension();
             $image->move('images',$imageName);
